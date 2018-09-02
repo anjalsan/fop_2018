@@ -1,0 +1,12 @@
+package com.fpl.fop.fop.injection.module;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import javax.inject.Qualifier;
+
+@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PresenterParam {
+    String value();
+}
