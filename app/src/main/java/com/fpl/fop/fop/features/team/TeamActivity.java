@@ -178,7 +178,7 @@ public class TeamActivity extends BaseActivity implements TeamContractView, Play
         if (bfwTeam.updated_at != null) {
             try {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                SimpleDateFormat output = new SimpleDateFormat("MMM dd HH:mm");
+                SimpleDateFormat output = new SimpleDateFormat("MMM dd hh:mm a");
                 sdf.setTimeZone(TimeZone.getTimeZone("Etc/UTC"));
 
                 Date d = sdf.parse(bfwTeam.updated_at);
