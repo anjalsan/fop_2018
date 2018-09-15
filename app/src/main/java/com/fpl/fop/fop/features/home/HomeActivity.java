@@ -15,6 +15,7 @@ import com.fpl.fop.fop.features.gameweek.GWTablePresenter;
 import com.fpl.fop.fop.features.gameweek.GWTableView;
 import com.fpl.fop.fop.features.leaguetable.LeagueTableActivity;
 import com.fpl.fop.fop.injection.component.ActivityComponent;
+import com.fpl.fop.fop.mvrx.TallyDetailsActivity;
 
 import javax.inject.Inject;
 
@@ -34,6 +35,9 @@ public class HomeActivity extends BaseActivity implements HomeContractView {
     @BindView(R.id.table)
     View table;
 
+    @BindView(R.id.veg_tally)
+    View vegTally;
+
     private Context context;
 
     @Override
@@ -46,6 +50,7 @@ public class HomeActivity extends BaseActivity implements HomeContractView {
 
         gw.setOnClickListener(v -> homePresenter.clickGw());
         table.setOnClickListener(v -> homePresenter.clickTable());
+        vegTally.setOnClickListener(v -> homePresenter.clickOthers());
     }
 
     @Override
@@ -80,6 +85,6 @@ public class HomeActivity extends BaseActivity implements HomeContractView {
 
     @Override
     public void clickOther() {
-
+        startActivity(TallyDetailsActivity.startingIntent(context));
     }
 }

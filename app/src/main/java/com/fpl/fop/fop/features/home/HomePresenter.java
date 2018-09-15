@@ -30,4 +30,8 @@ public class HomePresenter extends BasePresenter<HomeContractView> {
     public void clickTable() {
         getView().clickTable();
     }
+
+    public void clickOthers() {
+        getView().clickOther();
+    }
 }
