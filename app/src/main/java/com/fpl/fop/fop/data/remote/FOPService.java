@@ -1,5 +1,6 @@
 package com.fpl.fop.fop.data.remote;
 
+import com.fpl.fop.fop.data.model.response.PlayerTallyItem;
 import com.fpl.fop.fop.data.model.response.TallyItem;
 import com.fpl.fop.fop.data.model.response.BfwTeam;
 
@@ -18,4 +19,7 @@ public interface FOPService {
 
     @GET
     Single<List<TallyItem>> getTallyList(@Url String url);
+
+    @GET
+    Single<List<PlayerTallyItem>> getFullTallyList(@Url String url);
 }

@@ -8,6 +8,7 @@ import android.support.design.widget.CoordinatorLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.airbnb.mvrx.BaseMvRxFragment
 import com.airbnb.mvrx.MvRx
@@ -17,6 +18,7 @@ import com.fpl.fop.fop.R
 import com.fpl.fop.fop.data.model.response.TallyItem
 import com.fpl.fop.fop.mvrx.PersonsState
 import com.fpl.fop.fop.mvrx.PersonsViewModel
+import javax.inject.Inject
 
 abstract class BaseFragment : BaseMvRxFragment() {
 
@@ -24,6 +26,7 @@ abstract class BaseFragment : BaseMvRxFragment() {
 
     protected lateinit var coordinatorLayout: CoordinatorLayout
     protected lateinit var recyclerView: EpoxyRecyclerView
+    protected lateinit var switchMode: Switch
     protected val epoxyController by lazy {epoxyController() }
     // Used to keep track of task changes to determine if we should show a snackbar.
     private var oldTasks: List<TallyItem>? = null
@@ -31,9 +34,17 @@ abstract class BaseFragment : BaseMvRxFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_base, container, false).apply {
-                coordinatorLayout = findViewById(R.id.coordinator_layout)
                 recyclerView = findViewById(R.id.recycler_view)
+                switchMode = findViewById(R.id.switch_mode)
                 recyclerView.setController(epoxyController)
+
+                switchMode.setOnCheckedChangeListener { buttonView, isChecked ->
+                    if (isChecked) {
+                        viewModel.refreshTasks(false)
+                    } else {
+                        viewModel.refreshTasks(true)
+                    }
+                }
             }
 
     @CallSuper
@@ -43,7 +54,6 @@ abstract class BaseFragment : BaseMvRxFragment() {
                 oldTasks = persons
                 return@selectSubscribe
             }
-
             oldTasks = persons
         }
     }

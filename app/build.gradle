@@ -25,8 +25,8 @@ android {
         targetSdkVersion 27
         testInstrumentationRunner "com.fpl.fop.fop.runner.RxAndroidJUnitRunner"
         versionCode 8
-        // Major -> Millions, Minor -> Thousands, Bugfix -> Hundreds. E.g 1.3.72 == 1,003,072
         versionName '2018.2'
+        multiDexEnabled true
 
         buildConfigField("String", "POKEAPI_API_URL",
                 "\"${PokeapiApiUrl}\"")
@@ -126,7 +126,7 @@ dependencies {
     kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:customtabs:27.1.1'
+    implementation 'com.android.support:customtabs:28.0.0-rc01'
 
     implementation "android.arch.navigation:navigation-fragment-ktx:$navVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$navVersion"
@@ -135,8 +135,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation 'com.airbnb.android:mvrx:0.5.0'
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
+    implementation 'com.android.support:recyclerview-v7:28.0.0-rc01'
+    implementation 'com.android.support:multidex:1.0.0'
 
     debugImplementation debugLibs
     releaseImplementation releaseLibs

@@ -8,6 +8,7 @@ import com.fpl.fop.fop.features.tally.TallyActivity;
 import com.fpl.fop.fop.features.team.TeamActivity;
 import com.fpl.fop.fop.injection.PerActivity;
 import com.fpl.fop.fop.injection.module.ActivityModule;
+import com.fpl.fop.fop.mvrx.TallyDetailsActivity;
 
 @PerActivity
 @Subcomponent(modules = ActivityModule.class)
@@ -21,6 +22,7 @@ public interface ActivityComponent {
 
     void inject(LeagueTableActivity LeagueTableActivity);
 
-
     void inject(TallyActivity TallyActivity);
+
+    void inject(TallyDetailsActivity TallyDetailsActivity);
 }

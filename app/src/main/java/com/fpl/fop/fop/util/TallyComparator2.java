@@ -11,8 +11,10 @@ public class TallyComparator2 {
         public int compare(TallyItem b1, TallyItem b2) {
             if (b1.count > b2.count) {
                 return -1;
-            } else {
+            } else if (b1.count < b2.count) {
                 return 1;
+            } else {
+                return 0;
             }
         }
     }

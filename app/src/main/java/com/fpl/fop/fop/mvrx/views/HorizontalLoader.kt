@@ -26,6 +26,6 @@ class HorizontalLoader @JvmOverloads constructor(
      */
     @ModelProp
     fun setLoading(loading: Boolean) {
-        progressBar.visibility = if (loading) View.VISIBLE else View.INVISIBLE
+        progressBar.visibility = if (loading) View.VISIBLE else View.GONE
     }
 }

@@ -11,6 +11,7 @@ import com.fpl.fop.fop.mvrx.core.BaseFragment
 import com.fpl.fop.fop.mvrx.core.simpleController
 import com.fpl.fop.fop.mvrx.views.horizontalLoader
 import com.fpl.fop.fop.mvrx.views.taskItemView
+import com.fpl.fop.fop.mvrx.views.vegtallyHeader
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,25 +37,16 @@ class ListFragment : BaseFragment() {
     }
 
     override fun epoxyController() = simpleController(viewModel) { state ->
-//         We always want to show this so the content won't snap up when the loader finishes.
         horizontalLoader {
             id("loader")
             loading(state.isLoading)
         }
 
-        if (state.persons.isEmpty() && !state.isLoading) {
-//            fullScreenMessageView {
-//                id("empty_message")
-//                iconRes(iconRes)
-//                title(title)
-//            }
-        }
-
         state.persons
                 .forEach { task ->
                     taskItemView {
-                        id(task.id)
-                        title(task.name)
+                        id(task.name)
+                        title(task)
                         checked(true)
                         onClickListener { _ -> Log.e("Clicked", "Testing") }
                     }
