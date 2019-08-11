@@ -38,9 +38,9 @@ class PersonsViewModel(initialState: PersonsState) : MvRxViewModel<PersonsState>
                             val gw : Int =res.get(0).game_week.game_week.fpl_gw
                             val url: String;
                             if (isAll) {
-                                url = "/bfw/api/veg_tally/" + gw.toString() +"?all=True"
+                                url = "/hfh/api/veg_tally/" + gw.toString() +"?all=True"
                             } else {
-                                url = "/bfw/api/veg_tally/" + gw.toString()
+                                url = "/hfh/api/veg_tally/" + gw.toString()
                             }
                             dataManager
                                     .getFullVegList(url)

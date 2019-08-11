@@ -43,7 +43,7 @@ public class PlayerFooterView extends LinearLayout {
     }
 
     @ModelProp
-    public void setTotal(int total) {
+    public void setTotal(float total) {
         totalView.setText(String.valueOf(total));
     }
 

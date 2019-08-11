@@ -96,7 +96,7 @@ public class TallyActivity extends BaseActivity implements TallyView, ErrorView.
     }
 
     private String getUrl(String gw, String id) {
-        this.url = String.format("bfw/api/veg_tally/%s/%s", gw, id);
+        this.url = String.format("hfh/api/veg_tally/%s/%s", gw, id);
         return url;
     }
 

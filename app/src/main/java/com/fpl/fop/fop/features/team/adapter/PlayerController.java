@@ -28,7 +28,7 @@ public class PlayerController extends EpoxyController {
 
 
     public long sub_id, cap_id;
-    private int total;
+    private float total;
 
     @Inject
     public PlayerController(TeamActivity homeActivity) {
@@ -36,7 +36,7 @@ public class PlayerController extends EpoxyController {
         setDebugLoggingEnabled(true);
     }
 
-    public void setPlayers(List<Player> players, long fpl_id, long sub_id, int total) {
+    public void setPlayers(List<Player> players, long fpl_id, long sub_id, float total) {
         this.players = players;
         this.cap_id = fpl_id;
         this.sub_id = sub_id;

@@ -51,7 +51,7 @@
                 android:id="@+id/nfs_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BFW GW Live"
+                android:text="Hustle for Hollywood GW Live"
                 android:textColor="#000"
                 android:fontFamily="@font/regular"
                 android:textSize="20dp"
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Battle for Westeros 2018-19"
+                android:text="Hustle for Hollywood 2019-20"
                 android:textColor="#000"
                 android:fontFamily="@font/light"
                 android:textSize="12dp"
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BFW Table"
+                android:text="HFH Table"
                 android:textColor="#000"
                 android:fontFamily="@font/regular"
                 android:textSize="20dp"
@@ -105,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Battle for Westeros League Table 2018-19"
+                android:text="Hustle for Hollywood League Table 2019-20"
                 android:textColor="#000"
                 android:fontFamily="@font/light"
                 android:textSize="12dp"

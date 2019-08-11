@@ -14,7 +14,7 @@ import retrofit2.http.Url;
 
 public interface FOPService {
 
-    @GET("bfw/api/teams/")
+    @GET("hfh/api/teams/")
     Single<List<BfwTeam>> getPokemonList(@Query("limit") int limit);
 
     @GET
