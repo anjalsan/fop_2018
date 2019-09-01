@@ -24,8 +24,8 @@ android {
         minSdkVersion 19
         targetSdkVersion 27
         testInstrumentationRunner "com.fpl.fop.fop.runner.RxAndroidJUnitRunner"
-        versionCode 10
-        versionName '2019.1'
+        versionCode 11
+        versionName '2019.2'
         multiDexEnabled true
 
         buildConfigField("String", "POKEAPI_API_URL",

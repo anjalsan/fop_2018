@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        android:weightSum="15">
+        android:weightSum="13">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_weight="3"
             android:fontFamily="@font/bold"
             android:text="Titlsa"
             android:maxLines="1"

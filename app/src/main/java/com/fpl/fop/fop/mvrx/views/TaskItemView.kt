@@ -39,17 +39,26 @@ class TaskItemView @JvmOverloads constructor(
     fun setTitle(title: TallyItem) {
         titleView.text = title.name
 
-        whiteWalker.text = title.whiteWalker.toString()
-        brotherhood.text = title.brotherhood.toString()
-        dothraki.text = title.dothraki.toString()
-        valyrians.text = title.valyrians.toString()
-        targaryens.text = title.targaryens.toString()
-        nightsWatch.text = title.nightsWatch.toString()
-        lannisters.text = title.lannisters.toString()
-        starks.text = title.starks.toString()
-        facelessMen.text = title.facelessMen.toString()
-        kingslayers.text = title.kingslayers.toString()
+        render(whiteWalker, title.whiteWalker)
+        render(brotherhood, title.brotherhood)
+        render(dothraki, title.dothraki)
+        render(valyrians, title.valyrians)
+        render(targaryens, title.targaryens)
+        render(nightsWatch, title.nightsWatch)
+        render(lannisters, title.lannisters)
+        render(starks, title.starks)
+        render(facelessMen, title.facelessMen)
+        render(kingslayers, title.kingslayers)
     }
+
+    private fun render(view: TextView?, count: Float) {
+        if ((count * 10) % 10 == 0F) {
+            view?.text = count.toInt().toString()
+        } else {
+            view?.text = count.toString()
+        }
+    }
+
 
     @ModelProp
     fun setChecked(checked: Boolean) {

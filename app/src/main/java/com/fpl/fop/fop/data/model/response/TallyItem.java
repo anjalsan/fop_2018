@@ -1,9 +1,10 @@
 package com.fpl.fop.fop.data.model.response;
 
 public class TallyItem {
-    public int count, score, id;
+    public float count;
+    public int score, id;
     public String name;
-    public int whiteWalker, brotherhood, dothraki, valyrians, targaryens, nightsWatch, lannisters, starks, facelessMen, kingslayers;
+    public float whiteWalker, brotherhood, dothraki, valyrians, targaryens, nightsWatch, lannisters, starks, facelessMen, kingslayers;
 
     @Override
     public boolean equals(Object o) {
@@ -30,20 +31,20 @@ public class TallyItem {
 
     @Override
     public int hashCode() {
-        int result = count;
+        int result = (count != +0.0f ? Float.floatToIntBits(count) : 0);
         result = 31 * result + score;
         result = 31 * result + id;
-        result = 31 * result + name.hashCode();
-        result = 31 * result + whiteWalker;
-        result = 31 * result + brotherhood;
-        result = 31 * result + dothraki;
-        result = 31 * result + valyrians;
-        result = 31 * result + targaryens;
-        result = 31 * result + nightsWatch;
-        result = 31 * result + lannisters;
-        result = 31 * result + starks;
-        result = 31 * result + facelessMen;
-        result = 31 * result + kingslayers;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (whiteWalker != +0.0f ? Float.floatToIntBits(whiteWalker) : 0);
+        result = 31 * result + (brotherhood != +0.0f ? Float.floatToIntBits(brotherhood) : 0);
+        result = 31 * result + (dothraki != +0.0f ? Float.floatToIntBits(dothraki) : 0);
+        result = 31 * result + (valyrians != +0.0f ? Float.floatToIntBits(valyrians) : 0);
+        result = 31 * result + (targaryens != +0.0f ? Float.floatToIntBits(targaryens) : 0);
+        result = 31 * result + (nightsWatch != +0.0f ? Float.floatToIntBits(nightsWatch) : 0);
+        result = 31 * result + (lannisters != +0.0f ? Float.floatToIntBits(lannisters) : 0);
+        result = 31 * result + (starks != +0.0f ? Float.floatToIntBits(starks) : 0);
+        result = 31 * result + (facelessMen != +0.0f ? Float.floatToIntBits(facelessMen) : 0);
+        result = 31 * result + (kingslayers != +0.0f ? Float.floatToIntBits(kingslayers) : 0);
         return result;
     }
 }

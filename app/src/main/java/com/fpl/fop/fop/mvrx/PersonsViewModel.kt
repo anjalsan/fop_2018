@@ -11,6 +11,7 @@ import com.fpl.fop.fop.data.model.response.TallyItem
 import com.fpl.fop.fop.mvrx.core.MvRxViewModel
 import com.fpl.fop.fop.mvrx.data.TasksDataSource
 import com.fpl.fop.fop.util.rx.scheduler.SchedulerUtils
+import java.lang.RuntimeException
 
 data class PersonsState(
         val persons: List<TallyItem> = emptyList(),
@@ -71,10 +72,10 @@ class PersonsViewModel(initialState: PersonsState) : MvRxViewModel<PersonsState>
 
     fun addPlayer(newPersons: MutableList<TallyItem>, position: Int, player: TallyItem) {
         var isAvailable = false
-        for (i in 0..newPersons.size  - 1){
-            if (newPersons.get(i).name.equals(player.name)) {
+        for (i in 0 until newPersons.size){
+            if (newPersons[i].name.equals(player.name)) {
                 isAvailable = true
-                addCount(newPersons.get(i), position, player.count)
+                addCount(newPersons[i], position, player.count)
                 break
             }
         }
@@ -84,7 +85,7 @@ class PersonsViewModel(initialState: PersonsState) : MvRxViewModel<PersonsState>
         }
     }
 
-    fun addCount(player: TallyItem, position: Int, count: Int) {
+    fun addCount(player: TallyItem, position: Int, count: Float) {
         when (position) {
             0 -> player.whiteWalker = count
             1 -> player.brotherhood = count
